@@ -1,0 +1,63 @@
+.notification {
+  border-radius: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  animation: slideIn 0.2s ease-out;
+}
+
+.notification.danger {
+  background-color: light-dark(var(--color-red-50), var(--color-red-950));
+  border: 1px solid light-dark(var(--color-red-300), var(--color-red-500));
+  color: light-dark(var(--color-red-600), var(--color-red-400));
+}
+
+.notification.warning {
+  background-color: light-dark(
+    var(--color-yellow-100),
+    var(--color-yellow-950)
+  );
+  border: 1px solid light-dark(var(--color-yellow-400), var(--color-yellow-500));
+  color: light-dark(var(--color-yellow-700), var(--color-yellow-300));
+}
+
+.notification.success {
+  background-color: light-dark(var(--color-green-100), var(--color-green-950));
+  border: 1px solid light-dark(var(--color-green-600), var(--color-green-500));
+  color: light-dark(var(--color-green-700), var(--color-green-400));
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message {
+  flex: 1;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: inherit;
+  padding: 0;
+  line-height: 1;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.closeButton:hover {
+  opacity: 1;
+}

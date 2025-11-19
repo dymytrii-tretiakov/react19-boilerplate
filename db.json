@@ -1,0 +1,162 @@
+{
+  "books": [
+    {
+      "author": {
+        "birthYear": 1896,
+        "id": 1,
+        "name": "F. Scott Fitzgerald"
+      },
+      "id": 1,
+      "title": "The Great Gatsby"
+    },
+    {
+      "author": {
+        "birthYear": 1926,
+        "id": 2,
+        "name": "Harper Lee"
+      },
+      "id": 2,
+      "title": "To Kill a Mockingbird"
+    },
+    {
+      "author": {
+        "birthYear": 1903,
+        "id": 3,
+        "name": "George Orwell"
+      },
+      "id": 3,
+      "title": "1984"
+    },
+    {
+      "author": {
+        "birthYear": 1903,
+        "id": 3,
+        "name": "George Orwell"
+      },
+      "id": 4,
+      "title": "Animal Farm"
+    },
+    {
+      "author": {
+        "birthYear": 1962,
+        "id": 4,
+        "name": "J.K. Rowling"
+      },
+      "id": 5,
+      "title": "Harry Potter and the Philosopher's Stone"
+    },
+    {
+      "author": {
+        "birthYear": 1892,
+        "id": 5,
+        "name": "J.R.R. Tolkien"
+      },
+      "id": 6,
+      "title": "The Lord of the Rings"
+    },
+    {
+      "author": {
+        "birthYear": 1775,
+        "id": 6,
+        "name": "Jane Austen"
+      },
+      "id": 7,
+      "title": "Pride and Prejudice"
+    },
+    {
+      "author": {
+        "birthYear": 1899,
+        "id": 7,
+        "name": "Ernest Hemingway"
+      },
+      "id": 8,
+      "title": "The Old Man and the Sea"
+    },
+    {
+      "author": {
+        "birthYear": 1947,
+        "id": 8,
+        "name": "Stephen King"
+      },
+      "id": 9,
+      "title": "The Shining"
+    },
+    {
+      "author": {
+        "birthYear": 1813,
+        "id": 9,
+        "name": "Charles Dickens"
+      },
+      "id": 10,
+      "title": "Great Expectations"
+    },
+    {
+      "author": {
+        "birthYear": 1920,
+        "id": 10,
+        "name": "Ray Bradbury"
+      },
+      "id": 11,
+      "title": "Fahrenheit 451"
+    },
+    {
+      "author": {
+        "birthYear": 1902,
+        "id": 11,
+        "name": "John Steinbeck"
+      },
+      "id": 12,
+      "title": "Of Mice and Men"
+    },
+    {
+      "author": {
+        "birthYear": 1954,
+        "id": 12,
+        "name": "Kazuo Ishiguro"
+      },
+      "id": 13,
+      "title": "Never Let Me Go"
+    },
+    {
+      "author": {
+        "birthYear": 1948,
+        "id": 13,
+        "name": "Margaret Atwood"
+      },
+      "id": 14,
+      "title": "The Handmaid's Tale"
+    },
+    {
+      "author": {
+        "birthYear": 1932,
+        "id": 14,
+        "name": "Sylvia Plath"
+      },
+      "id": 15,
+      "title": "The Bell Jar"
+    },
+    {
+      "author": {
+        "birthYear": 1922,
+        "id": 15,
+        "name": "Kurt Vonnegut"
+      },
+      "id": 16,
+      "title": "Slaughterhouse-Five"
+    },
+    {
+      "author": {
+        "birthYear": 1897,
+        "id": 16,
+        "name": "William Faulkner"
+      },
+      "id": 17,
+      "title": "The Sound and the Fury"
+    }
+  ],
+  "me": {
+    "email": "dima.tretiakov@example.com",
+    "fistName": "Dima",
+    "lastName": "Tretiakov"
+  }
+}

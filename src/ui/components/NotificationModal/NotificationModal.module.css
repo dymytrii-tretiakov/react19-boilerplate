@@ -1,0 +1,196 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: light-dark(
+    var(--color-black-alpha-50),
+    var(--color-black-alpha-70)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+/* Overlay transitions */
+.overlayEnter {
+  opacity: 0;
+}
+
+.overlayEnterActive {
+  opacity: 1;
+  transition: opacity 200ms ease-out;
+}
+
+.overlayExit {
+  opacity: 1;
+}
+
+.overlayExitActive {
+  opacity: 0;
+  transition: opacity 200ms ease-in;
+}
+
+.modal {
+  background-color: light-dark(var(--color-white), var(--color-gray-800-dark));
+  border-radius: 0.5rem;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Severity-specific classes */
+.modal.danger {
+  --title-color: light-dark(var(--color-red-600), var(--color-red-400));
+  --button-bg: light-dark(var(--color-red-600), var(--color-red-500));
+}
+
+.modal.warning {
+  --title-color: light-dark(var(--color-yellow-700), var(--color-yellow-300));
+  --button-bg: light-dark(var(--color-yellow-400), var(--color-yellow-500));
+}
+
+.modal.success {
+  --title-color: light-dark(var(--color-green-700), var(--color-green-400));
+  --button-bg: light-dark(var(--color-green-600), var(--color-green-500));
+}
+
+/* Apply modal animation when overlay enters/exits */
+.overlayEnter .modal {
+  opacity: 0;
+  transform: scale(0.9) translateY(-2rem);
+}
+
+.overlayEnterActive .modal {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+}
+
+.overlayExit .modal {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.overlayExitActive .modal {
+  opacity: 0;
+  transform: scale(0.9) translateY(-2rem);
+  transition: opacity 200ms ease-in, transform 200ms ease-in;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 1rem;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--title-color);
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: light-dark(var(--color-gray-600), var(--color-gray-400-dark));
+  padding: 0;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.closeButton:hover {
+  color: light-dark(var(--color-gray-800), var(--color-gray-200));
+}
+
+.context {
+  margin: 0 0 0.5rem 0;
+  color: light-dark(var(--color-gray-600), var(--color-gray-400-dark));
+}
+
+.message {
+  margin: 0;
+  color: light-dark(var(--color-gray-800), var(--color-gray-200));
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.code {
+  margin: 1rem 0 0 0;
+  font-size: 0.875rem;
+  color: light-dark(var(--color-gray-600), var(--color-gray-400-dark));
+}
+
+.footer {
+  margin-top: 1.5rem;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.button {
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.cancelButton {
+  background-color: var(--color-gray-600);
+  color: var(--color-white);
+}
+
+.cancelButton:hover {
+  opacity: 0.8;
+}
+
+.actionButton {
+  background-color: var(--button-bg);
+  color: var(--color-white);
+}
+
+.modal.warning .actionButton {
+  color: light-dark(var(--color-gray-800), var(--color-gray-900));
+}
+
+.actionButton:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.actionButton:active {
+  transform: translateY(0);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .overlayEnterActive,
+  .overlayExitActive {
+    transition: none;
+  }
+
+  .overlayEnterActive .modal,
+  .overlayExitActive .modal {
+    transition: none;
+    transform: none;
+  }
+
+  .closeButton,
+  .button,
+  .actionButton {
+    transition: none;
+  }
+
+  .actionButton:hover {
+    transform: none;
+  }
+}
