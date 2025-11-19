@@ -1,0 +1,72 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "refresh": "Refresh",
+    "cancel": "Cancel",
+    "ok": "OK",
+    "confirm": "Confirm",
+    "close": "Close",
+    "error": "Error",
+    "warning": "Warning",
+    "success": "Success"
+  },
+  "navigation": {
+    "skipToMain": "Skip to main content",
+    "goToHome": "Go to Home",
+    "goToBook": "Go to Book",
+    "goToHomePage": "Navigate to home page",
+    "goToBookPage": "Navigate to book list page",
+    "primaryNavigation": "Primary navigation"
+  },
+  "bookList": {
+    "title": "Book List",
+    "heading": "Book List",
+    "empty": "No books available.",
+    "loadingBooks": "Loading books...",
+    "refreshButton": "Refresh book list",
+    "author": "by {{name}}",
+    "authorLabel": "Author: {{name}}"
+  },
+  "user": {
+    "title": "Me",
+    "heading": "User profile",
+    "email": "Email:",
+    "name": "Name:",
+    "showName": "Show name",
+    "hideName": "Hide name",
+    "showNameLabel": "Show your name",
+    "hideNameLabel": "Hide your name"
+  },
+  "notification": {
+    "close": "Close",
+    "closeDialog": "Close notification dialog",
+    "closeNotification": "Close {{severity}} notification",
+    "context": "Context: {{context}}",
+    "code": "Code: {{code}}",
+    "cancelAction": "Cancel action",
+    "confirmAction": "Confirm action"
+  },
+  "notificationTest": {
+    "title": "Notification System Test",
+    "toastSection": "Toast Notifications",
+    "modalSection": "Info Modals (OK button)",
+    "askModalSection": "Ask Modals (Action + Cancel)",
+    "inlineSection": "Inline Notifications",
+    "successToast": "Success Toast",
+    "warningToast": "Warning Toast",
+    "dangerToast": "Danger Toast",
+    "successInfo": "Success Info",
+    "warningInfo": "Warning Info",
+    "dangerInfo": "Danger Info",
+    "deleteConfirmation": "Delete Confirmation",
+    "saveConfirmation": "Save Confirmation",
+    "successInline": "Success Inline",
+    "warningInline": "Warning Inline",
+    "dangerInline": "Danger Inline"
+  },
+  "aria": {
+    "bookListSection": "Book list",
+    "notificationRegion": "Notifications",
+    "mainContent": "main"
+  }
+}

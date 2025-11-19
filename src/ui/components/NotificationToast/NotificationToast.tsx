@@ -1,16 +1,18 @@
 import { createRef, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import type { NotificationSeverity } from "../../../domain/models/Notification";
 import { storeFactory } from "../../../infrastructure/factories/StoreFactory";
 import styles from "./NotificationToast.module.css";
 
-const severityTitles: Record<NotificationSeverity, string> = {
-  danger: "Error",
-  warning: "Warning",
-  success: "Success",
-};
-
 function NotificationToast() {
+  const { t } = useTranslation();
+
+  const severityTitles: Record<NotificationSeverity, string> = {
+    danger: t("common.error"),
+    warning: t("common.warning"),
+    success: t("common.success"),
+  };
   const notifications = storeFactory.useNotificationStore(
     (state) => state.notifications
   );
@@ -27,7 +29,7 @@ function NotificationToast() {
     <div
       className={styles.container}
       role="region"
-      aria-label="Notifications"
+      aria-label={t("aria.notificationRegion")}
       aria-live="polite"
       aria-atomic="false"
     >
@@ -69,9 +71,10 @@ function NotificationToast() {
                   <button
                     className={styles.closeButton}
                     onClick={() => removeNotification(notification.id)}
-                    aria-label={`Close ${severityTitles[
-                      notification.severity
-                    ].toLowerCase()} notification`}
+                    aria-label={t("notification.closeNotification", {
+                      severity:
+                        severityTitles[notification.severity].toLowerCase(),
+                    })}
                   >
                     ×
                   </button>

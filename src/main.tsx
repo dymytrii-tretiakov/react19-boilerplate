@@ -1,6 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router";
+import "./i18n";
 import "./index.css";
 import { IS_LOCAL_DEVELOPMENT } from "./infrastructure/config";
 import Layout from "./ui/Layout";

@@ -1,8 +1,10 @@
+import { useTranslation } from "react-i18next";
 import { container } from "../../../infrastructure/di";
 import NotificationInline from "../NotificationInline";
 import styles from "./NotificationTest.module.css";
 
 function NotificationTest() {
+  const { t } = useTranslation();
   const notificationService = container.notificationService;
 
   const showSuccessNotification = () => {
@@ -125,94 +127,102 @@ function NotificationTest() {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>Notification System Test</h2>
+      <h2 className={styles.title}>{t("notificationTest.title")}</h2>
 
       <div className={styles.section}>
-        <h3 className={styles.sectionTitle}>Toast Notifications</h3>
+        <h3 className={styles.sectionTitle}>
+          {t("notificationTest.toastSection")}
+        </h3>
         <div className={styles.buttonGroup}>
           <button
             className={`${styles.button} ${styles.successButton}`}
             onClick={showSuccessNotification}
           >
-            Success Toast
+            {t("notificationTest.successToast")}
           </button>
           <button
             className={`${styles.button} ${styles.warningButton}`}
             onClick={showWarningNotification}
           >
-            Warning Toast
+            {t("notificationTest.warningToast")}
           </button>
           <button
             className={`${styles.button} ${styles.dangerButton}`}
             onClick={showDangerNotification}
           >
-            Danger Toast
+            {t("notificationTest.dangerToast")}
           </button>
         </div>
       </div>
 
       <div className={styles.section}>
-        <h3 className={styles.sectionTitle}>Info Modals (OK button)</h3>
+        <h3 className={styles.sectionTitle}>
+          {t("notificationTest.modalSection")}
+        </h3>
         <div className={styles.buttonGroup}>
           <button
             className={`${styles.button} ${styles.successButton}`}
             onClick={showSuccessModal}
           >
-            Success Info
+            {t("notificationTest.successInfo")}
           </button>
           <button
             className={`${styles.button} ${styles.warningButton}`}
             onClick={showWarningModal}
           >
-            Warning Info
+            {t("notificationTest.warningInfo")}
           </button>
           <button
             className={`${styles.button} ${styles.dangerButton}`}
             onClick={showDangerModal}
           >
-            Danger Info
+            {t("notificationTest.dangerInfo")}
           </button>
         </div>
       </div>
 
       <div className={styles.section}>
-        <h3 className={styles.sectionTitle}>Ask Modals (Action + Cancel)</h3>
+        <h3 className={styles.sectionTitle}>
+          {t("notificationTest.askModalSection")}
+        </h3>
         <div className={styles.buttonGroup}>
           <button
             className={`${styles.button} ${styles.dangerButton}`}
             onClick={showAskModal}
           >
-            Delete Confirmation
+            {t("notificationTest.deleteConfirmation")}
           </button>
           <button
             className={`${styles.button} ${styles.warningButton}`}
             onClick={showWarningAskModal}
           >
-            Save Confirmation
+            {t("notificationTest.saveConfirmation")}
           </button>
         </div>
       </div>
 
       <div className={styles.section}>
-        <h3 className={styles.sectionTitle}>Inline Notifications</h3>
+        <h3 className={styles.sectionTitle}>
+          {t("notificationTest.inlineSection")}
+        </h3>
         <div className={styles.buttonGroup}>
           <button
             className={`${styles.button} ${styles.successButton}`}
             onClick={showSuccessInline}
           >
-            Success Inline
+            {t("notificationTest.successInline")}
           </button>
           <button
             className={`${styles.button} ${styles.warningButton}`}
             onClick={showWarningInline}
           >
-            Warning Inline
+            {t("notificationTest.warningInline")}
           </button>
           <button
             className={`${styles.button} ${styles.dangerButton}`}
             onClick={showDangerInline}
           >
-            Danger Inline
+            {t("notificationTest.dangerInline")}
           </button>
         </div>
         <NotificationInline context="test-inline" />

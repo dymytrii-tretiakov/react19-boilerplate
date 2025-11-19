@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { CSSTransition } from "react-transition-group";
 import type {
   Notification,
@@ -7,13 +8,14 @@ import type {
 import { storeFactory } from "../../../infrastructure/factories/StoreFactory";
 import styles from "./NotificationModal.module.css";
 
-const severityTitles: Record<NotificationSeverity, string> = {
-  danger: "Error",
-  warning: "Warning",
-  success: "Success",
-};
-
 function NotificationModal() {
+  const { t } = useTranslation();
+
+  const severityTitles: Record<NotificationSeverity, string> = {
+    danger: t("common.error"),
+    warning: t("common.warning"),
+    success: t("common.success"),
+  };
   const notifications = storeFactory.useNotificationStore(
     (state) => state.notifications
   );
@@ -179,30 +181,32 @@ function NotificationModal() {
                 <button
                   className={styles.closeButton}
                   onClick={handleCancel}
-                  aria-label="Close notification dialog"
+                  aria-label={t("notification.closeDialog")}
                 >
                   ×
                 </button>
               </div>
               {notification.context && (
                 <p className={styles.context}>
-                  Context: {notification.context}
+                  {t("notification.context", { context: notification.context })}
                 </p>
               )}
               <p id="modal-message" className={styles.message}>
                 {notification.message}
               </p>
               {notification.code && (
-                <p className={styles.code}>Code: {notification.code}</p>
+                <p className={styles.code}>
+                  {t("notification.code", { code: notification.code })}
+                </p>
               )}
               <div className={styles.footer}>
                 {isAskModal && (
                   <button
                     className={`${styles.button} ${styles.cancelButton}`}
                     onClick={handleCancel}
-                    aria-label="Cancel action"
+                    aria-label={t("notification.cancelAction")}
                   >
-                    Cancel
+                    {t("common.cancel")}
                   </button>
                 )}
                 <button
@@ -210,13 +214,14 @@ function NotificationModal() {
                   onClick={isAskModal ? handleAction : handleCancel}
                   aria-label={
                     isAskModal
-                      ? notification.actionButtonText || "Confirm action"
-                      : "Close notification"
+                      ? notification.actionButtonText ||
+                        t("notification.confirmAction")
+                      : t("notification.close")
                   }
                 >
                   {isAskModal
-                    ? notification.actionButtonText || "Confirm"
-                    : "OK"}
+                    ? notification.actionButtonText || t("common.confirm")
+                    : t("common.ok")}
                 </button>
               </div>
             </>

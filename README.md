@@ -19,6 +19,23 @@ This application is designed to be inclusive and accessible to all users:
 
 For detailed accessibility documentation, see [ACCESSIBILITY.md](./ACCESSIBILITY.md).
 
+## 🌍 Internationalization (i18n)
+
+The application supports multiple languages:
+
+- **English (en)** - Default language
+- **Spanish (es)** - Español
+
+Features:
+
+- ✅ Dynamic language switching via UI toggle
+- ✅ All text content translated
+- ✅ ARIA labels translated for screen readers
+- ✅ HTML lang attribute updates automatically
+- ✅ Interpolation support for dynamic content
+
+For detailed i18n documentation, see [I18N.md](./I18N.md).
+
 ## 🚀 Getting Started
 
 ```bash

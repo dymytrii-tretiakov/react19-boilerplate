@@ -1,0 +1,72 @@
+{
+  "common": {
+    "loading": "Cargando...",
+    "refresh": "Actualizar",
+    "cancel": "Cancelar",
+    "ok": "Aceptar",
+    "confirm": "Confirmar",
+    "close": "Cerrar",
+    "error": "Error",
+    "warning": "Advertencia",
+    "success": "Éxito"
+  },
+  "navigation": {
+    "skipToMain": "Saltar al contenido principal",
+    "goToHome": "Ir a Inicio",
+    "goToBook": "Ir a Libros",
+    "goToHomePage": "Navegar a la página de inicio",
+    "goToBookPage": "Navegar a la lista de libros",
+    "primaryNavigation": "Navegación principal"
+  },
+  "bookList": {
+    "title": "Lista de Libros",
+    "heading": "Lista de Libros",
+    "empty": "No hay libros disponibles.",
+    "loadingBooks": "Cargando libros...",
+    "refreshButton": "Actualizar lista de libros",
+    "author": "por {{name}}",
+    "authorLabel": "Autor: {{name}}"
+  },
+  "user": {
+    "title": "Mi Perfil",
+    "heading": "Perfil de usuario",
+    "email": "Correo electrónico:",
+    "name": "Nombre:",
+    "showName": "Mostrar nombre",
+    "hideName": "Ocultar nombre",
+    "showNameLabel": "Mostrar tu nombre",
+    "hideNameLabel": "Ocultar tu nombre"
+  },
+  "notification": {
+    "close": "Cerrar",
+    "closeDialog": "Cerrar diálogo de notificación",
+    "closeNotification": "Cerrar notificación de {{severity}}",
+    "context": "Contexto: {{context}}",
+    "code": "Código: {{code}}",
+    "cancelAction": "Cancelar acción",
+    "confirmAction": "Confirmar acción"
+  },
+  "notificationTest": {
+    "title": "Prueba del Sistema de Notificaciones",
+    "toastSection": "Notificaciones Toast",
+    "modalSection": "Modales de Información (botón OK)",
+    "askModalSection": "Modales de Confirmación (Acción + Cancelar)",
+    "inlineSection": "Notificaciones en Línea",
+    "successToast": "Toast de Éxito",
+    "warningToast": "Toast de Advertencia",
+    "dangerToast": "Toast de Error",
+    "successInfo": "Info de Éxito",
+    "warningInfo": "Info de Advertencia",
+    "dangerInfo": "Info de Error",
+    "deleteConfirmation": "Confirmación de Eliminación",
+    "saveConfirmation": "Confirmación de Guardado",
+    "successInline": "Éxito en Línea",
+    "warningInline": "Advertencia en Línea",
+    "dangerInline": "Error en Línea"
+  },
+  "aria": {
+    "bookListSection": "Lista de libros",
+    "notificationRegion": "Notificaciones",
+    "mainContent": "principal"
+  }
+}
