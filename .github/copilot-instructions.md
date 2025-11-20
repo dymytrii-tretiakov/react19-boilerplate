@@ -153,9 +153,44 @@ npm run dev          # Start Vite dev server (port 5173)
 npm run json-server  # Start mock API (port 4000)
 npm run build        # TypeScript compile + Vite build
 npm run lint         # ESLint check
+npm test             # Run tests in watch mode
+npm run test:ui      # Run tests with Vitest UI
+npm run test:coverage # Run tests with coverage report
 ```
 
 **Important**: Run dev server AND json-server in separate terminals. API at `http://localhost:4000`, configured in `src/infrastructure/config.ts`.
+
+## Testing with Vitest
+
+All components must have corresponding `.test.tsx` files in the same directory:
+
+```typescript
+// Component tests use custom render from testUtils
+import { render, screen } from "../../../test/testUtils";
+import userEvent from "@testing-library/user-event";
+
+// Mock DI container for isolated testing
+vi.mock("../../../infrastructure/di", () => ({
+  container: {
+    bookService: { loadAllBooks: vi.fn() },
+    storeFactory: { useBookStore: vi.fn() },
+  },
+}));
+
+// Test accessibility requirements
+it("has proper accessibility attributes", () => {
+  render(<Component />);
+  expect(screen.getByRole("button")).toHaveAttribute("aria-label");
+});
+```
+
+**Test patterns:**
+
+- Use `src/test/testUtils.tsx` for rendering with providers (i18n, router)
+- Mock DI container services and stores in tests
+- Test accessibility: ARIA labels, keyboard navigation, focus management
+- Test user interactions with `@testing-library/user-event`
+- Vitest uses `globals: true` - no need to import describe/it/expect
 
 ## CSS Patterns
 
