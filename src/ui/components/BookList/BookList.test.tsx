@@ -22,12 +22,18 @@ describe("BookList", () => {
     vi.clearAllMocks();
   });
 
-  it("renders loading state initially", () => {
+  it("renders loading state initially", async () => {
     vi.mocked(container.storeFactory.useBookStore).mockReturnValue([]);
+    vi.mocked(container.bookService.loadAllBooks).mockResolvedValue();
 
     render(<BookList />);
 
     expect(screen.getByText("Loading books...")).toBeInTheDocument();
+
+    // Wait for useEffect to complete
+    await waitFor(() => {
+      expect(container.bookService.loadAllBooks).toHaveBeenCalled();
+    });
   });
 
   it("renders empty state when no books", async () => {
@@ -99,8 +105,9 @@ describe("BookList", () => {
     });
   });
 
-  it("has proper accessibility attributes", () => {
+  it("has proper accessibility attributes", async () => {
     vi.mocked(container.storeFactory.useBookStore).mockReturnValue([]);
+    vi.mocked(container.bookService.loadAllBooks).mockResolvedValue();
 
     render(<BookList />);
 
@@ -112,6 +119,11 @@ describe("BookList", () => {
 
     const refreshButton = screen.getByRole("button", { name: /refresh/i });
     expect(refreshButton).toHaveAttribute("aria-label");
+
+    // Wait for useEffect to complete
+    await waitFor(() => {
+      expect(container.bookService.loadAllBooks).toHaveBeenCalled();
+    });
   });
 
   it("disables refresh button while loading", async () => {
